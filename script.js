@@ -41,9 +41,15 @@ const fetchJoke = async () => {
 	}
   
 };
+//disable and enable button
+const toggleButton = ()=>{
+	button.disabled = !button.disabled;
+}
 
 button.addEventListener('click', ()=>{
+	//disable the button
+	toggleButton();
 	fetchJoke();
 })
-
+audioElement.addEventListener('ended', toggleButton)
 
